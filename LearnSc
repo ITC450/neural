@@ -1,0 +1,26 @@
+set terminal wxt size 800,600 enhanced font 'Verdana,12' persist
+set   autoscale                        # scale axes automatically
+unset log                              # remove any log-scaling
+unset label                            # remove any previous labels
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Performance for each Output/Class (Learning Set)"
+set xlabel "No. of Epocks * 1000"
+set ylabel "Performance"
+set grid
+set logscale y
+
+set style line 1  lc 1 lt 1 lw 2 
+set style line 2  lc 2 lt 1 lw 2 
+set style line 3  lc 3 lt 1 lw 2 
+set style line 4  lc 4 lt 1 lw 2
+set style line 5  lc 5 lt 1 lw 2
+set style line 6  lc 6 lt 1 lw 2
+set style line 7  lc 7 lt 1 lw 2
+set style line 8  lc 8 lt 1 lw 2
+set style line 9  lc 9 lt 1 lw 2
+
+plot "perf.txt" u 0:1 w lines ls 1 title 'c1', "perf.txt" u 0:2 w lines ls 2 title 'c2',"perf.txt" u 0:3 w lines ls 3 title 'c3',"perf.txt" u 0:4 w lines ls 4 title 'c4',"perf.txt" u 0:5 w lines ls 5 title 'c5',"perf.txt" u 0:6 w lines ls 6 title 'c6',"perf.txt" u 0:7 w lines ls 7 title 'c7',"perf.txt" u 0:8 w lines ls 8 title 'c8',"perf.txt" u 0:9 w lines ls 9 title 'c9'
+
+pause mouse
+

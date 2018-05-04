@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( NNMLP )
+add_executable( NNMLP NNMLP.cpp matlib.cpp neu.cpp)
+add_executable( RCEnet RCEnet.cpp matlib.cpp neu.cpp)
+target_link_libraries( NNMLP  m)
+target_link_libraries( RCEnet  m)
+SET(CMAKE_CXX_FLAGS "-O3 -funroll-loops")
