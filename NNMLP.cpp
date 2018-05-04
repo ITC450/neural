@@ -396,7 +396,7 @@ int main(int, char **argv)
    int antin     = inLearning->cols;
    int antN      = 10;
    int antout    = outLearning->cols;
-   int antEpokes = 1000;
+   int antEpokes = 2000;
 
    matrix *perf, *perfTst;
    initmat(&perf, antEpokes + 1, antout, 0.0);
@@ -413,7 +413,7 @@ int main(int, char **argv)
 
    for (int l = 0; l < antEpokes; l++)
    {
-      mlp_train(nn_net, inLearningNorm, outLearning, 20, 0.01);
+      mlp_train(nn_net, inLearningNorm, outLearning, 20, 0.02);
 
       srand(time(NULL));
       ShuffleMat(inLearningNorm, outLearning, tmp);
